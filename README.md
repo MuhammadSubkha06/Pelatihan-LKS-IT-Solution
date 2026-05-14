@@ -1,54 +1,61 @@
-# 🏥 Hospital Management System (HMS)
-> **Proyek Lomba Kompetensi Siswa (LKS) Provinsi DKI Jakarta 2024** > **Bidang Lomba: IT Software Solutions for Business (Desktop)**
 
-Sistem Manajemen Rumah Sakit ini dikembangkan menggunakan bahasa pemrograman **C# / VB.Net** dengan **.NET Framework**. Aplikasi ini dirancang untuk mengelola data medis secara digital, mulai dari manajemen klasifikasi penyakit (ICD-11), data dokter dan pasien, hingga pengaturan jadwal pertemuan serta proses pembayaran medis.
+
+# 🗺️ EsemkaTourism (Namatara) - LKS DKI Jakarta 2025
+> **Mobile Android Application for Tourism & Cultural Exploration**
+
+[cite_start]**EsemkaTourism** adalah aplikasi perjalanan yang dirancang untuk para penjelajah dan penggemar budaya[cite: 255]. [cite_start]Aplikasi ini berfungsi sebagai panduan digital untuk menemukan keindahan berbagai destinasi, mulai dari lanskap alam yang memukau hingga festival budaya yang semarak[cite: 256, 257].
 
 ---
 
 ## 🚀 Fitur Utama
 
-### 1. 🔐 Autentikasi Keamanan (Login)
-* [cite_start]**Encrypted Security:** Kata sandi dienkripsi menggunakan algoritma **SHA-512**[cite: 307].
-* [cite_start]**Identity Management:** Verifikasi kredensial pengguna dengan fitur *Show Password* untuk akurasi input[cite: 308].
+### 1. 🔐 Manajemen Akses (Auth)
+Sistem keamanan untuk memverifikasi identitas pengguna sebelum mengeksplorasi destinasi.
+* [cite_start]**Login Screen:** Verifikasi menggunakan Username dan Password yang tervalidasi melalui Backend API[cite: 283, 284].
+* [cite_start]**Sign-Up Screen:** Pendaftaran akun baru dengan validasi kecocokan kata sandi dan data diri pengguna[cite: 298, 300].
 
-### 2. 📋 Manajemen Data Master
-* [cite_start]**Master ICD-11:** Menampilkan klasifikasi penyakit standar internasional beserta deskripsi dan pengecualiannya (*exclusions*)[cite: 328, 329].
-* [cite_start]**Master Doctor:** Manajemen informasi dokter lengkap dengan filter kategori spesialis dan pencarian berdasarkan nama[cite: 351, 356, 357].
-* [cite_start]**Master Patient:** Pusat data pasien yang mendukung pencarian cepat dan riwayat pembaruan rekam medis[cite: 419, 421].
+### 2. 🏠 Eksplorasi Destinasi (Main Screen)
+[cite_start]Pusat navigasi aplikasi menggunakan `BottomNavigationView`[cite: 318].
+* [cite_start]**Home Screen:** Menampilkan daftar kategori pariwisata (seperti Acara & Festival, Homestay) dalam tata letak dua kolom yang dapat digulir[cite: 331, 332].
+* [cite_start]**Tourism Screen:** Fitur pencarian destinasi berdasarkan kata kunci judul dengan informasi jam buka dan deskripsi singkat[cite: 370, 372].
 
-### 3. 🤝 Manajemen Pertemuan (Meeting)
-* [cite_start]**New Meeting:** Penjadwalan pertemuan pasien dengan validasi jadwal agar tidak terjadi bentrok (*overlap*)[cite: 509, 516].
-* [cite_start]**Queue System:** Pembuatan nomor antrean otomatis berdasarkan jadwal harian yang diminta[cite: 517].
-* [cite_start]**Patient Records:** Pencatatan riwayat medis pasien selama masa pertemuan[cite: 547].
-* [cite_start]**Manage Meeting:** Kontrol penuh terhadap jadwal pertemuan, termasuk modifikasi rekam medis dan inisiasi proses pembayaran[cite: 570, 571].
-
-### 4. 💳 Sistem Pembayaran (Payment)
-* [cite_start]**Digital Invoicing:** Rekapitulasi biaya layanan dan obat-obatan yang harus dibayar[cite: 639].
-* [cite_start]**Credit Card Validation:** Integrasi pembayaran kartu kredit yang divalidasi menggunakan **Luhn Algorithm**[cite: 645].
-* [cite_start]**Read-only History:** Transaksi yang telah selesai akan terkunci dalam mode baca saja untuk menjaga integritas data[cite: 640].
+### 3. 👤 Profil & Personalisasi
+Ruang khusus bagi pengguna untuk mengelola pengalaman mereka.
+* [cite_start]**My Profile Screen:** Menampilkan informasi profil serta daftar destinasi yang telah diberikan rating (`MyRatings`) atau disimpan (`MyBookmarks`)[cite: 351, 352].
+* [cite_start]**Tourism Detail:** Informasi mendalam mengenai destinasi, termasuk lokasi, harga tiket, rating interaktif, dan fitur bookmark[cite: 388, 390].
 
 ---
 
-## 🛠️ Aturan Teknis & Validasi
+## 🛠️ Persyaratan Teknis (Technical Requirements)
 
-Berdasarkan pedoman umum kompetisi:
-* [cite_start]**Soft Delete:** Penghapusan data tidak menghapus baris dari database, melainkan menggunakan flag pada kolom `deleted_at`[cite: 264, 265].
-* **UI/UX Standard:**
-    * [cite_start]Setiap form baru harus diposisikan di tengah layar (*center screen*)[cite: 278].
-    * [cite_start]Menggunakan *striped white light-gray style* pada komponen DataGridView[cite: 284].
-    * [cite_start]Pencarian data menggunakan query `LIKE %search%`[cite: 283].
-* [cite_start]**Validation:** Setiap proses input wajib memiliki validasi data untuk memastikan kualitas informasi[cite: 287].
+Sebagai pengembang, aplikasi harus memenuhi kriteria berikut:
+* [cite_start]**Format Proyek:** Nama proyek harus menggunakan format `Mobile_[XX]` (XX adalah nomor PC)[cite: 276].
+* [cite_start]**Integrasi API:** Aplikasi terhubung dengan Web API yang disediakan menggunakan URL localhost `http://10.0.2.2:5000`[cite: 259, 268].
+* [cite_start]**UI Precision:** Antarmuka harus mengikuti desain komponen secara presisi (labels, buttons, images) tanpa ada yang terlewat[cite: 276].
+* [cite_start]**Validasi & Error:** Wajib mengimplementasikan validasi pada setiap proses input dan menampilkan pesan error yang informatif[cite: 276].
 
 ---
 
-## 💻 Cara Instalasi
+## 💻 Cara Instalasi & Konfigurasi
 
-1. [cite_start]**Project Naming:** Pastikan nama folder proyek mengikuti format `DESKTOP_[XX]` (XX adalah nomor PC)[cite: 256].
-2. [cite_start]**Database Setup:** Konfigurasikan database engine lokal tanpa mengubah struktur tabel atau kolom yang tersedia[cite: 262].
-3. [cite_start]**Environment:** Pastikan proyek dapat dijalankan di luar lingkungan PC pengembangan asal[cite: 259].
+1. **Persiapan Backend:**
+   * [cite_start]Jalankan file `EsemkaTourism.exe` yang terdapat dalam folder "Web API"[cite: 266, 268].
+   * [cite_start]Pastikan dokumentasi Swagger dapat diakses untuk referensi endpoint[cite: 273].
+2. **Konfigurasi Android:**
+   * [cite_start]Pastikan URL API diatur ke `http://10.0.2.2:5000` untuk emulator[cite: 268].
+   * [cite_start]URL Gambar diatur ke `http://10.0.2.2:5000/images/`[cite: 268].
+3. **Build Project:**
+   * Lakukan *Sync Project with Gradle Files* dan jalankan pada perangkat Android atau Emulator.
 
 ---
 
-**Dikembangkan oleh:** [Nama Peserta]  
-**PC Number:** [XX]  
-[cite_start]*ITSSB Indonesia Team 2024 - "Programming is thinking, not typing. But of course, why not both?"* [cite: 253, 651]
+## 📐 Tanggung Jawab Pengembang
+* [cite_start]**Manajemen Waktu:** Mengelola waktu pengerjaan dengan bijak sesuai batas waktu lomba[cite: 276].
+* [cite_start]**Stabilitas:** Memastikan aplikasi berjalan lancar tanpa *crash*[cite: 276].
+* [cite_start]**Fungsionalitas:** Mengutamakan fitur fungsional dibandingkan estetika desain tambahan[cite: 276].
+
+---
+
+**Dikembangkan untuk:** LKS Provinsi DKI Jakarta 2025  
+[cite_start]**Bidang Lomba:** IT Software Solutions for Business (Mobile Android) [cite: 252, 253]  
+**Status:** Competitor Submission
